@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background-color: #fdf8f0;
+    color: #2c1f16;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-wood-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-wood-700 transition-all duration-200 shadow-sm hover:shadow-md active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-cream-100 text-wood-800 border border-wood-200 px-6 py-3 rounded-lg font-medium hover:bg-cream-200 transition-all duration-200;
+  }
+  .btn-whatsapp {
+    @apply bg-green-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-600 transition-all duration-200 flex items-center gap-2 shadow-sm hover:shadow-md active:scale-95;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-cream-200 overflow-hidden hover:shadow-md transition-shadow duration-300;
+  }
+  .input-field {
+    @apply w-full border border-wood-200 rounded-lg px-4 py-3 text-bark-800 bg-white focus:outline-none focus:ring-2 focus:ring-wood-400 focus:border-transparent transition-all;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif text-bark-800 mb-2;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #fdf8f0; }
+::-webkit-scrollbar-thumb { background: #c8852a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a86520; }
+
+/* Page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
